@@ -1,0 +1,30 @@
+0.00 Non-spatialized sound (2D)
+0.39 Add other sounds manually or from directory
+0.53 Fade in and fade out
+0.58 Playback delay
+1.01 Clip playback probability
+1.04 Automated 2D option implied by folder structure
+1.39 Add Switch asset in switch component
+1.49 (Optional) Add Audio Source
+1.55 (Optional) Audio Source's Audio Mixer Group output
+2.58 T'essayes de dire quoi ?
+3.13 This can be your standard switch prefab.
+
+1)
+Montrer que c'est en 2 parties : Création de l'asset et options et Inclusion dans scène avec component.
+1. Switch creation
+2. Switch integration
+(3. (Optional) Audio source setup.)
+
+2)
+Pour 1.39 ça a changé : l'interface du switch apparait quand on le renseigne dans le component, 
+et ya quelques option en plus aussi (rapport aux collisions/triggers) 
+
+3)
+L'audio source s'ajoute auto, tu peux peut-être mettre les étapes le concernant
+avec un préfixe (Optional) ? 
+Comme tu veux, je comprends pour le routage, mais si qqun veut aller vite... Et puis ça allègerait.
+
+4)
+2.48 : Est-ce que t'as essayé de pas compiler et 
+juste d'appuyer sur le minuscule bouton haut-parleur au-dessus de la scene view ? Ca marcherait ptet...
