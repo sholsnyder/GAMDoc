@@ -37,7 +37,37 @@ A file hierarchy has been set up to allow for an optimized, faster audio integra
 
 \section{Audio Clip Manager}
 
-The Audio Clip Manager is a file browser designed specifically to allow a global view of all audio assets and optimize their management. All audio and import settings associated with an AudioClip, along with platform-specific options, can be managed here.
+Access : Menu Windows/Global Audio Manager/GAMAudioClipManager
+\\
+
+The Audio Clip Manager is a file browser designed specifically to allow a global view of all audio assets and optimize their management. All audio import settings associated with an AudioClip, along with platform-specific options, can be managed from here. This becomes indispensable when working on projects ranging from medium-size to maddening large. \\
+
+AudioClips are split into 3 audio types (Music, SFX and Voices. See Generalities section for more info). This separation is extremely useful for giving type-specific values to audio import settings of whole batches of clips. All import settings should be type-specific to allow maximum quality and maximum performance at runtime. \
+Clips corresponding to each type can be viewed separately, or all can be show together ; a fifth option allows to show all typeless clips.
+This can be managed with the 5 buttons on the left-hand side of the toolbar. This separation can be defined manually, by assigning singular or batches of AudioClips to a type (to select an array of clips, use the shift key or control(PC)/command(Mac) key), or automatically, provided the name of the type appears somewhere along the project-relative file path.\\
+
+On the right side of the toolbar, an array (or drop-down menu) of gaming platforms are represented. By selecting a platform, you can edit the import settings for it, independently from the others. Or make it follow the default pattern. \\
+
+The browser view itself imitates the regular Unity browser view, each line representing an AudioClip, and columns its settings for various runtime and import parameters. Modifying a seeting for an AudioClip within a selection will modify the setting in the same manner for all selected clips. The paramaters are as follows : 
+\begin{itemize}
+\item To Mono : force a clip into a mono configuration. This transforms a multichannel audio clip into a mono clip at runtime. Such a reduction can bypass issues with left/right panning inside an AudioClip, like a wrong panning.
+
+\item Background Load
+
+\item Preload :
+
+\item Load Type : 
+
+\item Format : the audio codec used for the audioclip. Allows changes on the quality/file size scale. Recommended : Vorbis, with type-specific quality settings (see below).
+
+\item Quality : compression rate of a compressed audioclip. The higher the quality, the lower the compression. Recommended optimal compression with minimal quality loss : \textasciitilde 80\% for music, \textasciitilde 40\% for SFX and \textasciitilde 70\% for voices. These numbers can greatly vary depending on the considered sounds, their pre-compression quality and the desired post-compression quality.
+
+\item Sample Rate : In a similar manner to quality, allows file size reduction at the price of data loss. Use very carefully ! As a general rule, do not assign a sample rate value lower than 44.100 Hz, and rely on the the \textit{Preserve} and \textit{Optimize} options.
+
+\item Label : the type (Music/SFX/Voice) of the clip.
+\end{itemize}
+
+Right-clicking a selection of AudioClips allows tweaking more parameters :...
 
 
 \section{UI}
