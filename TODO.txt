@@ -1,0 +1,6 @@
+Switch
+
+Permettre pre-listen in-editor
+Permettre 3ème option en plus de 2D/3D : pas d'override.
+Delay entre clips ou sur le switch ??????
+Utilité de l'apply ?
