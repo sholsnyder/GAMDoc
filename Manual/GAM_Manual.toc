@@ -1,6 +1,13 @@
-\contentsline {section}{\numberline {1}Folder structure}{3}{section.1}
+\contentsline {section}{\numberline {1}Arborescence}{3}{section.1}
 \contentsline {section}{\numberline {2}Audio Clip Manager}{3}{section.2}
 \contentsline {section}{\numberline {3}UI}{3}{section.3}
 \contentsline {section}{\numberline {4}Music}{3}{section.4}
 \contentsline {section}{\numberline {5}Switch}{3}{section.5}
 \contentsline {section}{\numberline {6}Animation}{3}{section.6}
+\contentsline {section}{\numberline {7}Generalities}{3}{section.7}
+\contentsline {subsection}{\numberline {7.1}Non-spatialized sounds}{4}{subsection.7.1}
+\contentsline {paragraph}{Example}{4}{section*.3}
+\contentsline {subsection}{\numberline {7.2}Fixed spatialized sounds}{4}{subsection.7.2}
+\contentsline {paragraph}{Example}{4}{section*.4}
+\contentsline {subsection}{\numberline {7.3}Mobile spatialized sounds}{4}{subsection.7.3}
+\contentsline {paragraph}{Example: }{4}{section*.5}
