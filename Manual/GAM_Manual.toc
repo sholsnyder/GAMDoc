@@ -7,10 +7,13 @@
 \contentsline {subsection}{\numberline {5.2}Switch creation and setup}{4}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Integration: Switch component}{4}{subsection.5.3}
 \contentsline {section}{\numberline {6}Animation}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}GAM Animation Component}{5}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Animation view}{5}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Footsteps view}{5}{subsection.6.3}
 \contentsline {section}{\numberline {7}Generalities}{5}{section.7}
 \contentsline {subsection}{\numberline {7.1}Non-spatialized sounds}{5}{subsection.7.1}
 \contentsline {paragraph}{Example}{5}{section*.3}
 \contentsline {subsection}{\numberline {7.2}Fixed spatialized sounds}{5}{subsection.7.2}
 \contentsline {paragraph}{Example}{5}{section*.4}
 \contentsline {subsection}{\numberline {7.3}Mobile spatialized sounds}{5}{subsection.7.3}
-\contentsline {paragraph}{Example: }{6}{section*.5}
+\contentsline {paragraph}{Example: }{5}{section*.5}

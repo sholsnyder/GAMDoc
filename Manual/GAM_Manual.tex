@@ -45,9 +45,9 @@ The Audio Clip Manager is a file browser designed specifically to allow a global
 AudioClips are split into 3 audio types (Music, SFX and Voices. See \nameref{sec:gen} section for more info). This separation is extremely useful for giving type-specific values to audio import settings of whole batches of clips. All import settings should be type-specific to allow maximum quality to performance proportion at runtime. \
 Clips corresponding to each type can be viewed separately, or all can be show together ; a fifth option allows to show all typeless clips. This can be managed with the 5 buttons on the left-hand side of the toolbar. This separation can be defined manually, by assigning singular or batches of AudioClips to a type (to select an array of clips, use the shift key or control(PC)/command(Mac) key), or automatically, provided the name of the type appears somewhere along the project-relative file path.\\
 
-On the right side of the toolbar, an array (or drop-down menu) of gaming platforms are represented. By selecting a platform, you can edit the import settings for it, independently from the others. Or make it follow the default pattern. \\
+On the right side of the toolbar, an array (or drop-down menu) of gaming platforms is represented. By selecting a platform, you can edit the import settings for it, independently from the others. Or make it follow the default pattern. \\
 
-The browser view itself imitates the regular Unity browser view, each line representing an AudioClip, and columns its settings for various runtime and import parameters. Modifying a setting for an AudioClip within a selection will modify the setting in the same manner for all selected clips. 
+The browser view itself imitates the regular Unity browser view, each line representing an AudioClip, and columns - its settings for various runtime and import parameters. Modifying a setting for an AudioClip within a selection will modify the setting in the same manner for all selected clips. 
 %The paramaters are as follows : 
 %\begin{itemize}
 %\item To Mono : force a clip into a mono configuration. This transforms a multichannel audio clip into a mono clip at runtime. Such a reduction can bypass issues with left/right panning inside an AudioClip, like a wrong panning.
@@ -93,25 +93,25 @@ The switch is at its core an array of similar AudioClips (for example, several f
 
 In GAM, the switch is an asset, created in a similar manner to any other asset : right-click in the browser view. Doing this with folders or AudioClips selected will create a switch referencing the selected AudioClips and the ones under the selected directories. \\
 
-The user has a great amount of control over the playback of a switch, which allows for a limitless sound variation potential. \begin{itemize}
-\item \textbf{Presets} include Music, Sound Effects and UI and setup the parameters of your switch to adequate values. This should be used carefully though, and requires checking, as all sounds won't react in the same manner to the possible changes.
-\item \textbf{Play On Start} matches the option on the AudioSource.
-\item \textbf{2D/3D} actually matches the spatial blend in an AudioSource, and will override it with the boundary values on the scale.
-\item \textbf{2D/3D}
-\item \textbf{Volume} is self-explanatory. It will scale the volume for all the contained AudioClips.
-\item \textbf{Loop Policy} handles the way the AudioClips will be played when the switch is triggered. 
+The user has a great amount of control over the playback of a switch, which allows for a limitless sound variation potential.
 	\begin{itemize}
-	\item \emph{One shot} Picks a clip and plays it.
-	\item \emph{Repeat} will continuously play the contained AudioClips, picking one when one finished. This setting and the following one are useful for audio backgrounds.
-	\item \emph{Repeat and exclude last element} will also continuously play the contained AudioClips, but will not play the same one twice in a row.
+	\item \textbf{Presets} include Music, Sound Effects and UI and setup the parameters of your switch to adequate values. This should be used carefully though, and requires checking, as all sounds won't react in the same manner to the possible changes.
+	\item \textbf{Play On Start} matches the option on the AudioSource.
+	\item \textbf{2D/3D} actually matches the spatial blend in an AudioSource, and will override it with the boundary values on the scale.
+	\item \textbf{2D/3D}
+	\item \textbf{Volume} is self-explanatory. It will scale the volume for all the contained AudioClips.
+	\item \textbf{Loop Policy} handles the way the AudioClips will be played when the switch is triggered. 
+		\begin{itemize}
+		\item \emph{One shot} Picks a clip and plays it.
+		\item \emph{Repeat} will continuously play the contained AudioClips, picking one when one finished. This setting and the following one are useful for audio backgrounds.
+		\item \emph{Repeat and exclude last element} will also continuously play the contained AudioClips, but will not play the same one twice in a row.
+		\end{itemize}
+	\item \textbf{Fade} handles fade-ins and fade-outs. If ticked, fade-in and fade-out durations below will be applied to switch playback (at the beginning and at the end of the switch, respectively, whether playback is looped or one-shot).
+	\item \textbf{Random pitch} randomizes the pitch of an AudioClip when it is played. The values displayed are in semitones. The randomization range is represented by the min-max slider. This can be especially useful for footsteps and other repetitive small impacts.
+	%\item \textbf{Delay} ????????????????????
+	\item \textbf{Element} is the name given to the referenced AudioClips, as they have slightly increased functionality : they are weighted. That's the slider on the left of each AudioClip line. Weight works like a normal, statistical/randomization weight : the higher it is, the more chances the AudioClip has of being picked at playback. A weight of 0 will prevent the AudioClip from being picked.
+	\item \textbf{Add Audio from directory} allows to add all AudioClips in a directory.
 	\end{itemize}
-
-\item \textbf{Fade} handles fade-ins and fade-outs. If ticked, fade-in and fade-out durations below will be applied to switch playback (at the beginning and at the end of the switch, respectively, whether playback is looped or one-shot).
-\item \textbf{Random pitch} randomizes the pitch of an AudioClip when it is played. The values displayed are in semitones. The randomization range is represented by the min-max slider. This can be especially useful for footsteps and other repetitive small impacts.
-\item \textbf{Delay} ????????????????????
-\item \textbf{Element} is the name given to the referenced AudioClips, as they have slightly increased functionality : they are weighted. That's the slider on the left of each AudioClip line. Weight works like a normal, statistical/randomization weight : the higher it is, the more chances the AudioClip has of being picked at playback. A weight of 0 will prevent the AudioClip from being picked.
-\item \textbf{Add Audio from directory} allows to add all AudioClips in a directory.
-\end{itemize}
 
 \subsection{Integration: Switch component}
 Since the switch extends the regular AudioClip/AudioSource functionality, it has its own component for integration : the \textbf{GAMSwitchComponent}, under Scripts. It allows referencing an existing switch and edit its settings (with the same interface as the own for the asset inspector). A Switch Component should have its own GameObject to avoid any AudioSource conflict with another Audio component. \\
@@ -120,7 +120,8 @@ The switch can handle AudioSource creation, but creating one for each switch com
 
 \section{Animation}
 
-%Access : Menu Windows/Global Audio Manager/GAMAnimation\\
+Access : Menu Windows/Global Audio Manager/GAMAnimation\
+Or via GAMAnimation component.\\
 
 Utilities allowing in-editor animation preview with sound and sound event addition and synchronization on the animation timeline. This utility allows for a classic \textit{play switch} event (see \autoref{sec:switch}), or for a \textit{play switch on surface} event, which automatically detects the surface under the animated object and plays a corresponding switch. The latter can typically be used for automatic surface-dependent footstep sounds on animated characters. \\
 Two buttons on the left-hand side of the toolbar allow to switch views between Animation and Footsteps.
@@ -153,43 +154,41 @@ Audio design in a video game is made up of several layers : \begin{itemize}
 Unity calls these 2D sounds. DO NOT mistake that for a 2D-game-exclusive instruction. Both 2D and 3D sounds should be used for any Unity project. \
 A non-spatialized sound is played back directly by the sound engine, without any processing from Unity, exactly like if it were played by a regular media player. This setting is often (but not systematically) used for music, voices and background SFX. \\
 
-\paragraph{Example} : Jardin, arbres, oiseaux, fontaine.\
-Background : Birds in the trees. More or less present depending on the time of day.
-
+\paragraph{Example} : A garden with \emph{birds} in the \emph{trees} and a \emph{fountain} in the center.\
+Background audio : Birds in the trees. More or less present depending on the time of day.
 
 \subsection{Fixed spatialized sounds}
 Fixed spatialized sounds are used for objects which don't move. Nevertheless, if the listener moves, their volume will change accordingly.
 
-\paragraph{Example} : Jardin, arbres, oiseaux, fontaine.\
-Fixed spatialized sound : the fountain. It emits sound, and the player can get closer or farther. So the fountain will have an audio source, with a volume rolloff curve. For a classic, realistic rolloff, the curve should be an invert-type function : \
+\paragraph{Example} : A garden with \emph{birds} in the \emph{trees} and a \emph{fountain} in the center.\
+Fixed spatialized sound : the fountain. It emits sound, and the player can get closer or farther. So the fountain will have an audio source, with a volume rolloff curve. For a classic, realistic rolloff, the curve should be an invert-type function.\
 
-\begin{figure}[h]
-\centering
-\caption{2D object rolloff.}
-\includegraphics[width=0.5\linewidth]{logRolloff}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\caption{2D object rolloff.}
+%\includegraphics[width=0.5\linewidth]{logRolloff}
+%\end{figure}
 
 
 
 \subsection{Mobile spatialized sounds}
 A spatialized sound may be attached to a moving object.
-\paragraph{Example: } Jardin, arbres, oiseaux, fontaine. A crow passes overhead and sticks around. To achieve realism, 3 elements are necessary : 
+\paragraph{Example: } A garden with \emph{birds} in the \emph{trees} and a \emph{fountain} in the center.\
+A crow passes overhead and sticks around. To achieve realism, 3 elements are necessary :
+
 \begin{itemize}
 \item A switch with 2 cawing sounds at the least.
 \item A Doppler effect to add to the feeling of changing distance.
 \item A volume rolloff of the type :\
 \end{itemize}
 
-\begin{figure}[h]
-\centering
-\caption{Invert function rolloff.}
-\includegraphics[width=0.4\linewidth]{dopplerRolloff}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\caption{Invert function rolloff.}
+%\includegraphics[width=0.4\linewidth]{dopplerRolloff}
+%\end{figure}
 
-
-
-
-\appendix
+%\appendix
 %This is a useless appendix
 
 \end{document}
