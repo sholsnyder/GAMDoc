@@ -1,33 +1,13 @@
 \contentsline {section}{\numberline {1}Arborescence}{3}{section.1}
 \contentsline {section}{\numberline {2}Audio Clip Manager}{3}{section.2}
 \contentsline {section}{\numberline {3}UI}{3}{section.3}
-\contentsline {subsection}{\numberline {3.1}GAM UI Editor}{3}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Events-sounds assignments}{3}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Parent objects}{4}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Objects Overview}{4}{subsubsection.3.1.3}
-\contentsline {section}{\numberline {4}Music}{4}{section.4}
-\contentsline {subsection}{\numberline {4.1}GAMMusic window}{4}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Parts}{4}{subsubsection.4.1.1}
-\contentsline {paragraph}{Cells: }{4}{section*.3}
-\contentsline {paragraph}{Track: }{4}{section*.4}
-\contentsline {paragraph}{Part: }{4}{section*.5}
-\contentsline {subsubsection}{\numberline {4.1.2}Structures}{4}{subsubsection.4.1.2}
-\contentsline {paragraph}{Structure: }{4}{section*.6}
-\contentsline {subsubsection}{\numberline {4.1.3}Mixes}{4}{subsubsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.4}GAMMusic file}{5}{subsubsection.4.1.4}
-\contentsline {subsection}{\numberline {4.2}GAMMusic Component}{5}{subsection.4.2}
-\contentsline {section}{\numberline {5}Switch}{5}{section.5}
-\contentsline {subsection}{\numberline {5.1}Quick theory}{5}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Switch creation and setup}{5}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Integration: Switch component}{6}{subsection.5.3}
-\contentsline {section}{\numberline {6}Animation}{6}{section.6}
-\contentsline {subsection}{\numberline {6.1}GAM Animation Component}{6}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Animation view}{6}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Footsteps view}{6}{subsection.6.3}
-\contentsline {section}{\numberline {7}Generalities}{6}{section.7}
-\contentsline {subsection}{\numberline {7.1}Non-spatialized sounds}{6}{subsection.7.1}
-\contentsline {paragraph}{Example}{6}{section*.7}
-\contentsline {subsection}{\numberline {7.2}Fixed spatialized sounds}{6}{subsection.7.2}
-\contentsline {paragraph}{Example}{7}{section*.8}
-\contentsline {subsection}{\numberline {7.3}Mobile spatialized sounds}{7}{subsection.7.3}
-\contentsline {paragraph}{Example: }{7}{section*.9}
+\contentsline {section}{\numberline {4}Music}{3}{section.4}
+\contentsline {section}{\numberline {5}Switch}{3}{section.5}
+\contentsline {section}{\numberline {6}Animation}{3}{section.6}
+\contentsline {section}{\numberline {7}Generalities}{3}{section.7}
+\contentsline {subsection}{\numberline {7.1}Non-spatialized sounds}{4}{subsection.7.1}
+\contentsline {paragraph}{Example}{4}{section*.3}
+\contentsline {subsection}{\numberline {7.2}Fixed spatialized sounds}{4}{subsection.7.2}
+\contentsline {paragraph}{Example}{4}{section*.4}
+\contentsline {subsection}{\numberline {7.3}Mobile spatialized sounds}{4}{subsection.7.3}
+\contentsline {paragraph}{Example: }{4}{section*.5}
