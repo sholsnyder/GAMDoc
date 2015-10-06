@@ -32,7 +32,8 @@ GAM is a set of tools designed to optimize and speed up audio integration.
 
 \section{Arborescence}
 
-A file hierarchy has been set up to allow for an optimized, faster audio integration in your Unity project. This hierarchy represents a conform audio structure, split into three domains : Voice, Sound Effects (SFX) and Music (see \nameref{sec:gen}).
+A file hierarchy has been set up within a \emph{Resources} subfolder to allow for an optimized, faster audio integration in your Unity project. This hierarchy represents a conform audio structure, split into three domains : Voice, Sound Effects (SFX) and Music (see \autoref
+{sec:gen}).
 
 
 \section{Audio Clip Manager}
@@ -72,14 +73,66 @@ The browser view itself imitates the regular Unity browser view, each line repre
 
 \section{UI}
 
-The UI Utility automatically references all the UI objects which are liable to play a sound on user interaction, and allows to define and control these sounds and their play settings.
+The UI Utility automatically references all the UI objects which are liable to play a sound on user interaction\footnote{Components derived from the Selectable class.}, and allows to define and control these sounds and their playback settings.
+
+\subsection{GAM UI Editor}
+\textbf{Access} : Menu Windows/Global Audio Manager/GAMUI\\
+
+This window allows a global overview of all selectable objects within the project, or under a specific canvas. It is split horizontally into three sections.
+
+\subsubsection{Events-sounds assignments}
+The top section allows building a \emph{setting}, which is basically a list of UI Events paired to Switches (see \nameref{sec:switch} section). All possible UI events are available.\\
+
+This setting can in turn be applied (Apply setting button) to all UI objects referenced in the \nameref{subsec:objove}. \
+On the contrary, the Clear objects of events button will delete all relevant\footnote{Meaning events which trigger a switch} events on these objects.
+
+\subsubsection{Parent objects}
+The \emph{parent objects} determine where to look for UI game objects. Canvases containing UI objects can be referenced using the + button, or all can be automatically added using the Add canvases in scene button.
+
+\subsubsection{Objects Overview}\label{subsec:objove}
+All referenced UI objects and all their relevant\footnote{Meaning events which trigger a switch} UI events are shown here.
 
 
 \section{Music}
 
-Easy integration of a mono or stereo dynamic music. \
-The example shows the structural slicing of an 8-bit version of the Tetris music. \
-More advanced options can be used to create a multitrack randomized music with the same slicing method. The example shows the process of creating such a music from a gypsy-jazz version of the same Tetris music.
+\subsection{GAMMusic window}
+\textbf{Access} : Menu Windows/Global Audio Manager/GAMMusic\\
+
+Allows integration of dynamic music, from simple setups to complex interactive systems. Small musical cells are fed into GAMMusic (possibly with separate instruments), and a complete dynamic music can be built.
+
+\subsubsection{Parts}
+These elements are the reservoir side of music building, or the vertical assembling. They can be managed from the lower part of the window. All elements within this section can be activated and deactivated (and will respectively be taken in consideration during playback or ignored).\
+
+\paragraph{Cells: } Music \emph{cells} are the smallest building block of a music. They represent a short length of music, and either a slice of the whole music, or a slice of an instrumental track. Cells should be made in different versions\footnote{One can use humanized quantization options on MIDI files to achieve realism. An audio recording should be made several times to produce different versions.}, and during playback one of these will be picked randomly (in the manner of a simplified \nameref{sec:switch}) by the \emph{track} container.
+
+\paragraph{Track: } these contain similar cells (the several versions mentioned above). They are in turn summed by the \emph{part}. They can be faded in and out.
+
+\paragraph{Part: } A part contains several instruments, and will play them together (and each one will pick a cell version, if any). It represents the total vertical slice of music. These are the basic building blocks for \emph{structuring }music.\\
+
+The menu in the purple toolbar allows loading AudioClips with respect to folder structure : Selecting a folder containing directories and subdirectories following the above hierarchy will load them into the music. The folder structure should be : Music folder/Part/Track/Cell.wav.
+
+\subsubsection{Structures}
+Structures are the instantiation of elements of the reservoir side, also named horizontal assembling. They are managed from the top part of the window.\\
+The menu in the purple toolbar allows switching structures or adding new ones.
+
+\paragraph{Structure: } a chain of parts. Each part in a chain can be looped (special instructions must then be sent to beak out of the loop). Each structure will be looped unless a follow-up is triggered.
+
+\subsubsection{Mixes}
+Mixes interact with both \emph{parts} and \emph{structures} and are the actual way of playing a music : a mix references a structure, and a setup of parts elements activations and fades. They can be managed from the left-hand side panel in the window.\\
+
+The menu in the purple toolbar allows adding mixes.
+
+\subsubsection{GAMMusic file}
+All of the above should be \textbf{saved} into a special asset - a music file. The top-most purple toolbar allows all usual interactions on a file : opening, saving, saving as, creating a new one...
+
+
+\subsection{GAMMusic Component}
+This is the component which is used to actually play a music at runtime. It simply references a music file, and various functions in it allow interacting with it from other scripts.
+
+
+%Easy integration of a mono or stereo dynamic music. \
+%The example shows the structural slicing of an 8-bit version of the Tetris music. \
+%More advanced options can be used to create a multitrack randomized music with the same slicing method. The example shows the process of creating such a music from a gypsy-jazz version of the same Tetris music.
 
 
 \section{Switch} \label{sec:switch}
@@ -120,7 +173,7 @@ The switch can handle AudioSource creation, but creating one for each switch com
 
 \section{Animation}
 
-Access : Menu Windows/Global Audio Manager/GAMAnimation\
+\textbf{Access} : Menu Windows/Global Audio Manager/GAMAnimation\
 Or via GAMAnimation component.\\
 
 Utilities allowing in-editor animation preview with sound and sound event addition and synchronization on the animation timeline. This utility allows for a classic \textit{play switch} event (see \autoref{sec:switch}), or for a \textit{play switch on surface} event, which automatically detects the surface under the animated object and plays a corresponding switch. The latter can typically be used for automatic surface-dependent footstep sounds on animated characters. \\
@@ -129,7 +182,9 @@ Two buttons on the left-hand side of the toolbar allow to switch views between A
 \subsection{GAM Animation Component}
 
 \subsection{Animation view}
-A global view of all Animation Clips present in the project. Mainly useful for 3D animations : Unity's 2D animation preview isn't handled well and can be completed with any sprite animation preview package on the asset store (beware though, some of these plugins may break the 3D animations preview). 3D animations require an avatar to generate a preview.
+A global view of all Animation Clips present in the project. Mainly useful for 3D animations : Unity's 2D animation preview isn't handled well and can be completed with any sprite animation preview package on the asset store (beware though, some of these plugins may break the 3D animations preview). 3D animations require an avatar to generate a preview.\\
+
+
 
 \subsection{Footsteps view}
 
